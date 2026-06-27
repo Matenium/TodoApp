@@ -6,7 +6,7 @@ interface Task { id?: number; title: string; description?: string; completed?: b
 
 @Injectable({ providedIn: 'root' })
 export class TaskService {
-  private base = 'http://localhost:8080/api/tasks';
+  private base = (window as any).__env?.API_URL || 'http://localhost:8080/api/tasks';
   constructor(private http: HttpClient) {}
 
   list(): Observable<Task[]> { return this.http.get<Task[]>(this.base); }

@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "ng serve --open",
+    "start": "node server.js",
+    "start:dev": "ng serve --open",
     "build": "ng build",
     "test": "ng test"
   },
@@ -20,7 +21,8 @@
     "tslib": "^2.6.0",
     "zone.js": "^0.13.0",
     "@angular/material": "^16.2.12",
-    "@angular/cdk": "^16.2.12"
+    "@angular/cdk": "^16.2.12",
+    "express": "^4.19.2"
   },
   "devDependencies": {
     "@angular/cli": "^16.2.12",
