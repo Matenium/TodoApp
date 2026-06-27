@@ -1,0 +1,5 @@
+mat-card { padding: 12px; }
+mat-list-item { align-items: center; }
+@media (max-width: 600px) {
+  mat-card { margin: 8px; }
+}
