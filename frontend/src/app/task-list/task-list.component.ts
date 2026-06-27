@@ -21,7 +21,7 @@ export class TaskListComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private svc: TaskService) {
     this.form = this.fb.group({
-      title: ['', Validators.required],
+      title: ['', [Validators.required, Validators.pattern(/.*\S.*/)]],
       description: ['']
     });
   }
@@ -36,7 +36,11 @@ export class TaskListComponent implements OnInit {
 
   add() {
     if (this.form.invalid) return;
-    this.svc.create(this.form.value).subscribe(() => {
+    const payload = {
+      ...this.form.value,
+      title: (this.form.value.title || '').trim()
+    };
+    this.svc.create(payload).subscribe(() => {
       this.form.reset();
       this.load();
     });
