@@ -1,0 +1,39 @@
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== IDE / Editor =====
+.vscode/
+.idea/
+*.iml
+
+# ===== Logs =====
+*.log
+logs/
+
+# ===== Java / Maven (Backend) =====
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+*.class
+
+# ===== Spring Boot =====
+backend/*.h2.db
+backend/*.trace.db
+backend/todo.db
+
+# ===== Node / Angular (Frontend) =====
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/coverage/
+frontend/.cache/
+
+# ===== Environment / secrets =====
+.env
+.env.*
+!.env.example
+
+# ===== Temporary files =====
+*.tmp
+*.swp
+*~
