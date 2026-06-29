@@ -19,6 +19,14 @@ export class TaskListComponent implements OnInit {
   tasks: Task[] = [];
   form: FormGroup;
 
+  get pendingTasks(): Task[] {
+    return this.tasks.filter(t => !t.completed);
+  }
+
+  get completedTasks(): Task[] {
+    return this.tasks.filter(t => !!t.completed);
+  }
+
   constructor(private fb: FormBuilder, private svc: TaskService) {
     this.form = this.fb.group({
       title: ['', [Validators.required, Validators.pattern(/.*\S.*/)]],
